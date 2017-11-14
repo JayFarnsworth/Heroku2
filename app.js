@@ -77,7 +77,7 @@ app.get('/', function (request, response) {
 app.get('/:id', function (request, response) {
   var foundId = findId(instructors, request.params.id);
   if (!foundId){
-    response.status = 404;
+    response.status(404);
     response.json({
       error: {
         message: "No record found!"
